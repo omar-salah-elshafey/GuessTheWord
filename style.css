@@ -1,0 +1,185 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --primary-color: #3498db;
+}
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Times New Roman", Times, serif;
+  background-color: #eee;
+}
+h1 {
+  background-color: white;
+  padding: 20px;
+  margin: 0 0 50px;
+  text-align: center;
+}
+.game {
+  text-align: center;
+  width: 80%;
+  max-width: 1200px;
+  margin: 20px auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .game-area {
+    width: 50%;
+    .inputs {
+      width: 100%;
+      > div {
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        span {
+          margin-right: 10px;
+          font-size: 30px;
+          width: fit-content;
+        }
+        input {
+          width: 50px;
+          height: 50px;
+          font-size: 30px;
+          font-weight: 600;
+          text-transform: uppercase;
+          text-align: center;
+          border: none;
+          background-color: white;
+          border-radius: 5px;
+          caret-color: var(--primary-color);
+          border-bottom: 2px solid #333;
+          &:focus {
+            outline-color: #ccc;
+          }
+          &.correct-place {
+            background-color: #18ba89;
+            border: #18ba89;
+            color: white;
+          }
+          &.wrong-place {
+            background-color: #f89e13;
+            border: #f89e13;
+
+            color: white;
+          }
+          &.wrong {
+            background-color: #27303f;
+            border: #27303f;
+            color: white;
+          }
+        }
+      }
+      .disabled {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+    }
+    .control {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 30px auto;
+      gap: 10px;
+      button {
+        border: none;
+        font-size: 25px;
+        padding: 15px 20px;
+        border-radius: 6px;
+        color: white;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      .check {
+        background-color: var(--primary-color);
+        flex-grow: 1;
+      }
+      .hint {
+        background-color: #009688;
+        width: fit-content;
+      }
+      button:disabled {
+        background-color: black;
+        opacity: 0.4;
+        cursor: no-drop;
+      }
+    }
+  }
+  .key-colors {
+    background-color: rgba(203, 207, 211, 0.221);
+    padding: 10px;
+    border-radius: 10px;
+    .key-color {
+      display: flex;
+      align-items: center;
+      background-color: white;
+      margin-bottom: 10px;
+      padding: 15px;
+      border-radius: 10px;
+      .key {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+      .correct-place {
+        background-color: #18ba89;
+      }
+      .wrong-place {
+        background-color: #f89e13;
+      }
+      .wrong {
+        background-color: #27303f;
+      }
+      .key-text {
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+footer {
+  background-color: #333;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  font-weight: bold;
+}
+@media (max-width: 1250px) {
+  .game {
+    flex-direction: column;
+    align-items: center;
+    .game-area {
+      width: 80%;
+      .inputs {
+        width: 100%;
+      }
+    }
+    .key-colors {
+      width: 80%;
+    }
+  }
+}
+.message {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  text-transform: capitalize;
+  span {
+    display: block;
+    font-weight: bold;
+    font-size: 50px;
+    margin-top: 10px;
+
+    color: var(--primary-color);
+  }
+  p {
+    margin-top: 15px;
+  }
+}
