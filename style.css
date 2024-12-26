@@ -183,3 +183,64 @@ footer {
     margin-top: 15px;
   }
 }
+
+@media (max-width: 768px) {
+  body {
+    padding: 0 10px;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  .game {
+    width: 100%;
+    margin: 10px auto;
+    flex-direction: column;
+    align-items: center;
+
+    .game-area {
+      width: 100%;
+      .inputs > div {
+        flex-direction: row;
+        span {
+          font-size: 20px;
+        }
+        input {
+          width: 40px;
+          height: 40px;
+          font-size: 20px;
+        }
+      }
+      .control {
+        flex-direction: column;
+        button {
+          width: 100%;
+          padding: 10px;
+          font-size: 18px;
+        }
+      }
+    }
+    .key-colors {
+      width: 100%;
+      .key-color {
+        flex-direction: column;
+        align-items: flex-start;
+        .key {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+  footer {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .message {
+    font-size: 24px;
+    span {
+      font-size: 36px; /* Adjust highlight text size */
+    }
+    p {
+      font-size: 16px;
+    }
+  }
+}
